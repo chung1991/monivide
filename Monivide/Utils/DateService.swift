@@ -75,6 +75,11 @@ class DateService {
         return customDateFormatter.string(from: date)
     }
     
+    func parseDate(_ string: String, _ format: String) -> Date? {
+        customDateFormatter.dateFormat = format
+        return customDateFormatter.date(from: string)
+    }
+    
     func getDateComponent(_ component: Calendar.Component, _ date: Date) -> Int {
         return calendar.component(component, from: date)
     }
