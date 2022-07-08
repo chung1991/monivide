@@ -7,24 +7,6 @@
 
 import UIKit
 
-// feature
-// - borrow money
-// - lend money
-
-// chung - lends - hanh
-// Tran {
-//      amount: 10
-//      paid:   chung
-//      owned:  hanh
-// }
-
-// chung - borrow - hanh
-// Tran {
-//      amount: 10
-//      paid:   hanh
-//      owned:  chung
-// }
-
 class FriendDetailsViewController: UIViewController {
     
     lazy var topView: UIView = {
@@ -55,7 +37,8 @@ class FriendDetailsViewController: UIViewController {
         return UIButton()
     }()
     
-    var viewModel = FriendDetailsViewModel()
+    var viewModel: FriendDetailsViewModel = FriendDetailsViewModelImpl()
+    
     let mainQueue = DispatchQueue.main
     
     override func viewDidLoad() {
@@ -154,7 +137,11 @@ class FriendDetailsViewController: UIViewController {
     
     
     @objc func didTapButton() {
-        
+        let vc = AddExpenseViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        vc.configure(viewModel.selectedUser?.username)
+        present(nav, animated: true, completion: nil)
     }
 }
 
@@ -165,23 +152,23 @@ extension FriendDetailsViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let month = viewModel.currentTransactions.keys[section]
+        let month = viewModel.currentExpenses.keys[section]
         return viewModel.getMonthDisplay(month)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.currentTransactions.keys.count
+        return viewModel.currentExpenses.keys.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let month = viewModel.currentTransactions.keys[section]
-        let transactions = viewModel.currentTransactions[month]
+        let month = viewModel.currentExpenses.keys[section]
+        let transactions = viewModel.currentExpenses[month]
         return transactions?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let month = viewModel.currentTransactions.keys[indexPath.section]
-        guard let transactions = viewModel.currentTransactions[month],
+        let month = viewModel.currentExpenses.keys[indexPath.section]
+        guard let transactions = viewModel.currentExpenses[month],
               let cell = tableView.dequeueReusableCell(withIdentifier: ExpenseCell.id, for: indexPath) as? ExpenseCell else {
             return UITableViewCell()
         }
@@ -201,11 +188,11 @@ extension FriendDetailsViewController: FriendDetailsViewModelDelegate {
             self.nameLabel.text = self.viewModel.selectedUser?.username
             if let selectedUsername = self.viewModel.selectedUser?.username {
                 if self.viewModel.currentAmount > 0 {
-                    self.ownTitleLabel.text = selectedUsername + " owes you"
+                    self.ownTitleLabel.text = selectedUsername.abbrLastName() + " owes you"
                     self.ownValueLabel.text = "\(self.viewModel.currentAmount.moneyFormat)"
                     self.ownValueLabel.textColor = .systemGreen
                 } else {
-                    self.ownTitleLabel.text = selectedUsername + " lends you"
+                    self.ownTitleLabel.text = selectedUsername.abbrLastName() + " lends you"
                     self.ownValueLabel.text = "\(self.viewModel.currentAmount.moneyFormat)"
                     self.ownValueLabel.textColor = .systemRed
                 }

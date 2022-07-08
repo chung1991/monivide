@@ -8,56 +8,70 @@
 import Foundation
 import OrderedCollections
 
-enum ExpenseOption {
-    case lend
-    case borrow
-}
-
 protocol FriendDetailsViewModelDelegate: AnyObject {
     func didGetTransaction()
 }
 
-class FriendDetailsViewModel {
-    var service = MoneyService.shared
-    let dateService = DateService()
+protocol FriendDetailsViewModel {
+    var moneyService: MoneyService { get set }
+    var userService: UserService { get set }
+    var dateUtils: DateUtils { get set }
+    var delegate: FriendDetailsViewModelDelegate? { get set }
+    
+    var currentUser: User? { get set }
+    var selectedUser: User? { get set }
+    var currentAmount: Double { get set }
+    var currentExpenses: OrderedDictionary<Date, [Expense]> { get set }
+    
+    func load()
+    func getMonthDisplay(_ date: Date) -> String
+}
+
+class FriendDetailsViewModelImpl: FriendDetailsViewModel {
+    var moneyService: MoneyService = {
+        let userDataSource = UserDataSourceImpl()
+        let expenseDataSource = ExpenseDataSourceImpl()
+        let dateUtils = DateUtilsImpl()
+        let moneyDataAccess = MoneyDataAccessImpl(userDataSource: userDataSource,
+                                                  expenseDataSource: expenseDataSource)
+        return MoneyServiceImpl(dateService: dateUtils,
+                                moneyDataAccess: moneyDataAccess)
+    }()
+    var userService: UserService = {
+        let userDataSource = UserDataSourceImpl()
+        let userDataAccess = UserDataAccessImpl(userDataSource: userDataSource)
+        return UserServiceImpl(userDataAccess: userDataAccess)
+    }()
+    var dateUtils: DateUtils = DateUtilsImpl()
     
     var currentUser: User?
+    var selectedUser: User?
     var currentAmount = 0.0
-    var currentTransactions: OrderedDictionary<Date, [Transaction]> = [:] {
+    var currentExpenses: OrderedDictionary<Date, [Expense]> = [:] {
         didSet {
+            guard let username = currentUser?.username else { fatalError() }
             currentAmount = 0.0
-            for transaction in currentTransactions.values.flatMap({ $0 }) {
-                currentAmount += transaction.amount
+            for expense in currentExpenses.values.flatMap({ $0 }) {
+                currentAmount += expense.getAmountDifferent(username)
             }
             delegate?.didGetTransaction()
         }
     }
-    var selectedUser: User?
+    
     weak var delegate: FriendDetailsViewModelDelegate?
     
     func load() {
-        if let user = service.getCurrentUser() {
+        // TODO: hard code, fix later
+        if let user = userService.getUserByUsername("Chung Nguyen"),
+           let selectedUser = userService.getUserByUsername("Hanh Nguyen") {
             currentUser = user
-            currentTransactions = service.getTransactions(by: user.username)
+            self.selectedUser = selectedUser
+            currentExpenses = moneyService.getExpenses(by: user.username)
         }
-
-        selectedUser = service.getSelectedUser()
     }
 
-//    func addExpense(_ amount: Double, _ option: ExpenseOption) {
-//        guard let currentUser = currentUser,
-//              let selectedUser = selectedUser else {
-//            return
-//        }
-//        if option == .lend {
-//            service.addExpense(currentUser, selectedUser, amount)
-//        } else {
-//            service.addExpense(selectedUser, currentUser, amount)
-//        }
-//    }
-    
     func getMonthDisplay(_ date: Date) -> String {
         let monthFormat = "MMMM yyyy"
-        return dateService.getDateString(date, monthFormat)
+        return dateUtils.getDateString(date, monthFormat)
     }
 }

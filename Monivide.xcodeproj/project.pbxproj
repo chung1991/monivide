@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C622B6CB28778C31002E7BF6 /* ExpenseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622B6CA28778C31002E7BF6 /* ExpenseCellViewModel.swift */; };
+		C622B6CD28778C48002E7BF6 /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622B6CC28778C48002E7BF6 /* AddExpenseViewModel.swift */; };
+		C622B6D128778D87002E7BF6 /* UserDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622B6D028778D87002E7BF6 /* UserDataAccess.swift */; };
 		C651E9B6286D12FA00DA7885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9B5286D12FA00DA7885 /* AppDelegate.swift */; };
 		C651E9BA286D12FA00DA7885 /* FriendDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9B9286D12FA00DA7885 /* FriendDetailsViewController.swift */; };
 		C651E9BF286D12FC00DA7885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C651E9BE286D12FC00DA7885 /* Assets.xcassets */; };
@@ -14,19 +17,24 @@
 		C651E9CD286D12FC00DA7885 /* MonivideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9CC286D12FC00DA7885 /* MonivideTests.swift */; };
 		C651E9D7286D12FC00DA7885 /* MonivideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9D6286D12FC00DA7885 /* MonivideUITests.swift */; };
 		C651E9D9286D12FC00DA7885 /* MonivideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9D8286D12FC00DA7885 /* MonivideUITestsLaunchTests.swift */; };
-		C651E9E6286D16FF00DA7885 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9E5286D16FF00DA7885 /* DateService.swift */; };
+		C651E9E6286D16FF00DA7885 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9E5286D16FF00DA7885 /* DateUtils.swift */; };
 		C651E9E8286F9F4700DA7885 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9E7286F9F4700DA7885 /* Array+Ext.swift */; };
-		C651E9ED286FA24300DA7885 /* UserDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9EC286FA24300DA7885 /* UserDataAccess.swift */; };
+		C651E9ED286FA24300DA7885 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9EC286FA24300DA7885 /* UserDataSource.swift */; };
 		C651E9EF286FA25F00DA7885 /* MoneyDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9EE286FA25F00DA7885 /* MoneyDataAccess.swift */; };
 		C651E9F2286FA27700DA7885 /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9F1286FA27700DA7885 /* MoneyService.swift */; };
-		C651E9F4286FA29200DA7885 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9F3286FA29200DA7885 /* Entity.swift */; };
 		C651E9FC286FA35000DA7885 /* FriendDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9FB286FA35000DA7885 /* FriendDetailsViewModel.swift */; };
 		C651E9FE286FA36C00DA7885 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651E9FD286FA36C00DA7885 /* Date+Ext.swift */; };
 		C651EA01286FA38C00DA7885 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651EA00286FA38C00DA7885 /* AddExpenseViewController.swift */; };
 		C651EA03286FA3EB00DA7885 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651EA02286FA3EB00DA7885 /* ExpenseCell.swift */; };
 		C651EA0A286FABE500DA7885 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = C651EA09286FABE500DA7885 /* OrderedCollections */; };
-		C651EA0C286FB7FE00DA7885 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651EA0B286FB7FE00DA7885 /* Model.swift */; };
 		C651EA0E286FBBB900DA7885 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651EA0D286FBBB900DA7885 /* String+Ext.swift */; };
+		C6E27CAB287649AA00ACE4EA /* ExpenseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E27CAA287649AA00ACE4EA /* ExpenseDataSource.swift */; };
+		C6E27CAE287649DF00ACE4EA /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E27CAD287649DF00ACE4EA /* UserEntity.swift */; };
+		C6E27CB0287649EF00ACE4EA /* ExpenseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E27CAF287649EF00ACE4EA /* ExpenseEntity.swift */; };
+		C6E27CB328764A4E00ACE4EA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E27CB228764A4E00ACE4EA /* Database.swift */; };
+		C6E27CB628764F0F00ACE4EA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E27CB528764F0F00ACE4EA /* User.swift */; };
+		C6E27CB828764F1800ACE4EA /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E27CB728764F1800ACE4EA /* Expense.swift */; };
+		C6E27CBA287651D200ACE4EA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E27CB9287651D200ACE4EA /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C622B6CA28778C31002E7BF6 /* ExpenseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCellViewModel.swift; sourceTree = "<group>"; };
+		C622B6CC28778C48002E7BF6 /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
+		C622B6D028778D87002E7BF6 /* UserDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataAccess.swift; sourceTree = "<group>"; };
 		C651E9B2286D12FA00DA7885 /* Monivide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monivide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C651E9B5286D12FA00DA7885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C651E9B9286D12FA00DA7885 /* FriendDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsViewController.swift; sourceTree = "<group>"; };
@@ -58,18 +69,23 @@
 		C651E9D2286D12FC00DA7885 /* MonivideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonivideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C651E9D6286D12FC00DA7885 /* MonivideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonivideUITests.swift; sourceTree = "<group>"; };
 		C651E9D8286D12FC00DA7885 /* MonivideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonivideUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C651E9E5286D16FF00DA7885 /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
+		C651E9E5286D16FF00DA7885 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		C651E9E7286F9F4700DA7885 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
-		C651E9EC286FA24300DA7885 /* UserDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataAccess.swift; sourceTree = "<group>"; };
+		C651E9EC286FA24300DA7885 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
 		C651E9EE286FA25F00DA7885 /* MoneyDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyDataAccess.swift; sourceTree = "<group>"; };
 		C651E9F1286FA27700DA7885 /* MoneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyService.swift; sourceTree = "<group>"; };
-		C651E9F3286FA29200DA7885 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		C651E9FB286FA35000DA7885 /* FriendDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsViewModel.swift; sourceTree = "<group>"; };
 		C651E9FD286FA36C00DA7885 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		C651EA00286FA38C00DA7885 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		C651EA02286FA3EB00DA7885 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
-		C651EA0B286FB7FE00DA7885 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C651EA0D286FBBB900DA7885 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		C6E27CAA287649AA00ACE4EA /* ExpenseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDataSource.swift; sourceTree = "<group>"; };
+		C6E27CAD287649DF00ACE4EA /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		C6E27CAF287649EF00ACE4EA /* ExpenseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseEntity.swift; sourceTree = "<group>"; };
+		C6E27CB228764A4E00ACE4EA /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		C6E27CB528764F0F00ACE4EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C6E27CB728764F1800ACE4EA /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		C6E27CB9287651D200ACE4EA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +114,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6055B832875013E004B02C8 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		C622B6CE28778CDC002E7BF6 /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				C651E9EE286FA25F00DA7885 /* MoneyDataAccess.swift */,
+				C622B6D028778D87002E7BF6 /* UserDataAccess.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		C622B6CF28778CEF002E7BF6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C651E9F1286FA27700DA7885 /* MoneyService.swift */,
+				C6E27CB9287651D200ACE4EA /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		C651E9A9286D12FA00DA7885 = {
 			isa = PBXGroup;
 			children = (
@@ -151,9 +192,10 @@
 		C651E9EB286FA23400DA7885 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C651E9F3286FA29200DA7885 /* Entity.swift */,
-				C651E9EC286FA24300DA7885 /* UserDataAccess.swift */,
-				C651E9EE286FA25F00DA7885 /* MoneyDataAccess.swift */,
+				C622B6CE28778CDC002E7BF6 /* DataAccess */,
+				C6E27CB128764A4300ACE4EA /* Mock */,
+				C6E27CAC287649D300ACE4EA /* Entity */,
+				C6E27CA92876498D00ACE4EA /* DataSource */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -161,8 +203,8 @@
 		C651E9F0286FA26A00DA7885 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				C651E9F1286FA27700DA7885 /* MoneyService.swift */,
-				C651EA0B286FB7FE00DA7885 /* Model.swift */,
+				C622B6CF28778CEF002E7BF6 /* Service */,
+				C6E27CB428764F0600ACE4EA /* Model */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -170,6 +212,7 @@
 		C651E9F5286FA29E00DA7885 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C6055B832875013E004B02C8 /* CustomView */,
 				C651EA04286FA3EE00DA7885 /* CustomCell */,
 				C651E9FF286FA38200DA7885 /* AddExpense */,
 				C651E9FA286FA31900DA7885 /* FriendDetails */,
@@ -190,7 +233,7 @@
 		C651E9F7286FA2B200DA7885 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C651E9E5286D16FF00DA7885 /* DateService.swift */,
+				C651E9E5286D16FF00DA7885 /* DateUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -219,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				C651EA00286FA38C00DA7885 /* AddExpenseViewController.swift */,
+				C622B6CC28778C48002E7BF6 /* AddExpenseViewModel.swift */,
 			);
 			path = AddExpense;
 			sourceTree = "<group>";
@@ -227,8 +271,44 @@
 			isa = PBXGroup;
 			children = (
 				C651EA02286FA3EB00DA7885 /* ExpenseCell.swift */,
+				C622B6CA28778C31002E7BF6 /* ExpenseCellViewModel.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		C6E27CA92876498D00ACE4EA /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				C651E9EC286FA24300DA7885 /* UserDataSource.swift */,
+				C6E27CAA287649AA00ACE4EA /* ExpenseDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		C6E27CAC287649D300ACE4EA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C6E27CAD287649DF00ACE4EA /* UserEntity.swift */,
+				C6E27CAF287649EF00ACE4EA /* ExpenseEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C6E27CB128764A4300ACE4EA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C6E27CB228764A4E00ACE4EA /* Database.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		C6E27CB428764F0600ACE4EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C6E27CB528764F0F00ACE4EA /* User.swift */,
+				C6E27CB728764F1800ACE4EA /* Expense.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,18 +448,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				C651E9BA286D12FA00DA7885 /* FriendDetailsViewController.swift in Sources */,
-				C651E9ED286FA24300DA7885 /* UserDataAccess.swift in Sources */,
+				C651E9ED286FA24300DA7885 /* UserDataSource.swift in Sources */,
+				C6E27CB0287649EF00ACE4EA /* ExpenseEntity.swift in Sources */,
 				C651E9E8286F9F4700DA7885 /* Array+Ext.swift in Sources */,
 				C651E9B6286D12FA00DA7885 /* AppDelegate.swift in Sources */,
 				C651EA03286FA3EB00DA7885 /* ExpenseCell.swift in Sources */,
+				C6E27CB328764A4E00ACE4EA /* Database.swift in Sources */,
 				C651E9FC286FA35000DA7885 /* FriendDetailsViewModel.swift in Sources */,
-				C651EA0C286FB7FE00DA7885 /* Model.swift in Sources */,
-				C651E9F4286FA29200DA7885 /* Entity.swift in Sources */,
+				C6E27CAE287649DF00ACE4EA /* UserEntity.swift in Sources */,
 				C651EA0E286FBBB900DA7885 /* String+Ext.swift in Sources */,
-				C651E9E6286D16FF00DA7885 /* DateService.swift in Sources */,
+				C651E9E6286D16FF00DA7885 /* DateUtils.swift in Sources */,
 				C651E9F2286FA27700DA7885 /* MoneyService.swift in Sources */,
 				C651E9EF286FA25F00DA7885 /* MoneyDataAccess.swift in Sources */,
+				C622B6CB28778C31002E7BF6 /* ExpenseCellViewModel.swift in Sources */,
+				C6E27CBA287651D200ACE4EA /* UserService.swift in Sources */,
+				C6E27CB628764F0F00ACE4EA /* User.swift in Sources */,
+				C622B6D128778D87002E7BF6 /* UserDataAccess.swift in Sources */,
 				C651EA01286FA38C00DA7885 /* AddExpenseViewController.swift in Sources */,
+				C622B6CD28778C48002E7BF6 /* AddExpenseViewModel.swift in Sources */,
+				C6E27CAB287649AA00ACE4EA /* ExpenseDataSource.swift in Sources */,
+				C6E27CB828764F1800ACE4EA /* Expense.swift in Sources */,
 				C651E9FE286FA36C00DA7885 /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

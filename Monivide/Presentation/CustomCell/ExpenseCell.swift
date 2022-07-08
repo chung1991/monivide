@@ -8,17 +8,9 @@
 import Foundation
 import UIKit
 
-class ExpenseCellViewModel {
-    let dateService = DateService()
-    func getDayDisplay(_ date: Date) -> String {
-        let dayFormat = "MMM d"
-        return dateService.getDateString(date, dayFormat)
-    }
-}
-
 class ExpenseCell: UITableViewCell {
     static let id = "ExpenseCell"
-    var viewModel = ExpenseCellViewModel()
+    var viewModel:ExpenseCellViewModel = ExpenseCellViewModelImpl()
     
     lazy var monthLabel: UILabel = {
         return UILabel()
@@ -135,27 +127,27 @@ class ExpenseCell: UITableViewCell {
         ])
     }
     
-    func configure(_ transaction: Transaction) {
-        let dayDisplay = viewModel.getDayDisplay(transaction.date)
+    func configure(_ expense: Expense) {
+        let dayDisplay = viewModel.getDayDisplay(expense.date)
         let parts = dayDisplay.components(separatedBy: " ")
         guard parts.count == 2 else {
             return
         }
-        let isPaid = transaction.amount > 0
+        let isPaid = expense.currentAmountDifferent > 0
         
         monthLabel.text = String(parts[0])
         dayLabel.text = String(parts[1])
         categoryImageView.image = UIImage(named: "cart")
-        titleLabel.text = transaction.title
+        titleLabel.text = expense.title
         
-        let tranPrefix = isPaid ? "You paid" : "\(transaction.paid) paid"
-        tranLabel.text = tranPrefix + " " + transaction.amount.moneyFormat
+        let tranPrefix = isPaid ? "You paid" : "\(expense.paid.abbrLastName()) paid"
+        tranLabel.text = tranPrefix + " " + expense.currentAmountDifferent.moneyFormat
         tranLabel.textColor = isPaid ? .systemGreen : .systemRed
         
         tranTypeLabel.text = isPaid ? "You lent" : "You borrowed"
         tranTypeLabel.textColor = isPaid ? .systemGreen : .systemRed
         
-        tranAmountLabel.text = transaction.amount.moneyFormat
+        tranAmountLabel.text = expense.currentAmountDifferent.moneyFormat
         tranAmountLabel.textColor = isPaid ? .systemGreen : .systemRed
     }
 }
