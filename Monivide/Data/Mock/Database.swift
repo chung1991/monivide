@@ -2,7 +2,7 @@
 //  Database.swift
 //  Monivide
 //
-//  Created by Chung EXI-Nguyen on 7/6/22.
+//  Created by Chung Nguyen on 7/6/22.
 //
 
 import Foundation

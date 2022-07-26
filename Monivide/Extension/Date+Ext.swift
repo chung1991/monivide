@@ -2,7 +2,7 @@
 //  Date+Ext.swift
 //  Monivide
 //
-//  Created by Chung EXI-Nguyen on 7/1/22.
+//  Created by Chung Nguyen on 7/1/22.
 //
 
 import Foundation

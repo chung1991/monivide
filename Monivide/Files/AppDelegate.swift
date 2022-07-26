@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Monivide
 //
-//  Created by Chung EXI-Nguyen on 6/29/22.
+//  Created by Chung Nguyen on 6/29/22.
 //
 
 import UIKit
